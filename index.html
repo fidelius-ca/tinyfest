@@ -438,9 +438,9 @@
 
 <div class="wrap tabs-wrap">
   <div class="tabs" role="tablist" aria-label="Tiny Fest sections">
-    <button type="button" role="tab" id="tab-directions" aria-controls="panel-directions" aria-selected="true" class="tab-btn is-active">Directions</button>
-    <button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="false" tabindex="-1" class="tab-btn">Tiny Map</button>
-    <button type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1" class="tab-btn">Schedule</button>
+    <button type="button" role="tab" id="tab-directions" aria-controls="panel-directions" aria-selected="true" class="tab-btn is-active" data-slug="directions">Directions</button>
+    <button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="map">Tiny Map</button>
+    <button type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="schedule">Schedule</button>
   </div>
 </div>
 
@@ -603,7 +603,8 @@
     <h3>Elsewhere</h3>
     <p class="links">
       <a href="https://tinyfest.xyz" target="_blank" rel="noopener">tinyfest.xyz</a>
-      <a href="https://tiny-fest-2026.secretparty.io" target="_blank" rel="noopener">Get tickets</a>
+      <a href="https://waiver.tinyfest.xyz" target="_blank" rel="noopener">Waiver</a>
+      <a href="https://minorwaiver.tinyfest.xyz" target="_blank" rel="noopener">Waiver for minor</a>
     </p>
   </div>
 </footer>
@@ -635,7 +636,7 @@
       panels[tab.id] = document.getElementById(tab.getAttribute('aria-controls'));
     });
 
-    function activate(tab, moveFocus){
+    function activate(tab, moveFocus, updateHash){
       tabs.forEach(function(t){
         var selected = t === tab;
         t.setAttribute('aria-selected', String(selected));
@@ -644,6 +645,9 @@
         panels[t.id].hidden = !selected;
       });
       if(moveFocus) tab.focus();
+      if(updateHash !== false && history.replaceState){
+        history.replaceState(null, '', '#' + tab.dataset.slug);
+      }
     }
 
     tabs.forEach(function(tab, i){
@@ -658,10 +662,14 @@
       });
     });
 
-    if(location.hash === '#map'){
-      var mapTab = document.getElementById('tab-map');
-      if(mapTab) activate(mapTab, false);
+    function activateFromHash(){
+      var slug = location.hash.replace('#', '').toLowerCase();
+      var match = tabs.filter(function(t){ return t.dataset.slug === slug; })[0];
+      if(match) activate(match, false, false);
     }
+
+    activateFromHash();
+    window.addEventListener('hashchange', activateFromHash);
   })();
 </script>
 
