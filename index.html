@@ -330,6 +330,11 @@
 
   .map-photo{ margin-top:8px; }
 
+  .agreements-section{ padding-top:48px; }
+  .agreements-section .body{ color:var(--ink-soft); max-width:68ch; }
+  .agreements-section .body p{ margin:20px 0 0; }
+  .agreements-section .body strong{ color:var(--ink); font-weight:600; }
+
   .map-section{ padding-top:4px; }
   .lead + .map-section{ margin-top:-20px; }
   .map-section h2{ font-size:1.5rem; margin-bottom:10px; }
@@ -441,6 +446,7 @@
     <button type="button" role="tab" id="tab-directions" aria-controls="panel-directions" aria-selected="true" class="tab-btn is-active" data-slug="directions">Directions</button>
     <button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="map">Tiny Map</button>
     <button type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="schedule">Schedule</button>
+    <button type="button" role="tab" id="tab-agreements" aria-controls="panel-agreements" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="agreements">Agreements</button>
   </div>
 </div>
 
@@ -598,6 +604,31 @@
   </div>
 </div>
 
+<div id="panel-agreements" role="tabpanel" aria-labelledby="tab-agreements" hidden>
+  <div class="wrap">
+    <header class="hero">
+      <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
+      <h1>Community Agreements</h1>
+      <p class="lead">By attending Tiny Fest, we agree to the following community agreements.</p>
+    </header>
+
+    <section class="agreements-section">
+      <div class="body">
+        <ul class="checklist">
+          <li>We will respect each other and keep each other safe.</li>
+          <li>Racism, misogyny, transphobia, homophobia, and xenophobia will not be tolerated.</li>
+          <li>We will honor consent practices on and off the dance floor. That means asking for permission to enter a person's physical and emotional space. And respecting the answer.</li>
+          <li>We will practice safe consumption and will hold ourselves accountable to not overly consume substances that could affect our ability to navigate the event safely and respectfully.</li>
+          <li>We will respect the space by picking up after ourselves, using the provided trash and recycling bins, and following a "leave no trace" ethos.</li>
+          <li>We will park in designated areas. And we will come and go from the event in a safe manner.</li>
+          <li>We will respect and celebrate the performers and contributing artists and will engage with the installations and art respectfully.</li>
+        </ul>
+        <p>If you run into issues, please go to the help desk area to alert a volunteer. There will also be walkie talkies at each area of the event if you need to reach someone remotely.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     <h3>Elsewhere</h3>
@@ -646,6 +677,7 @@
         panels[t.id].hidden = !selected;
       });
       if(moveFocus) tab.focus();
+      if(tab.scrollIntoView) tab.scrollIntoView({block:'nearest', inline:'nearest'});
       if(updateHash !== false && history.replaceState){
         history.replaceState(null, '', '#' + tab.dataset.slug);
       }
