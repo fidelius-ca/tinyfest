@@ -151,6 +151,10 @@
     padding:48px 0 56px;
     border-bottom:1px solid var(--line);
   }
+  header.hero.hero--flush{
+    border-bottom:none;
+    padding-bottom:32px;
+  }
   .hero h1{
     font-size:clamp(2.4rem, 5.6vw, 3.6rem);
     margin:14px 0 20px;
@@ -327,7 +331,7 @@
 
   .map-photo{ margin-top:8px; }
 
-  .map-section{ padding-top:40px; }
+  .map-section{ padding-top:28px; }
   .map-section h2{ font-size:1.5rem; margin-bottom:10px; }
   .map-section .body{ color:var(--ink-soft); max-width:62ch; }
   .map-section .body p{ margin:0 0 12px; }
@@ -441,7 +445,7 @@
 <div id="panel-directions" role="tabpanel" aria-labelledby="tab-directions">
   <div class="wrap">
     <header class="hero">
-      <span class="eyebrow">Tiny Fest · Sept 12, 2026</span>
+      <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
       <h1>Finding your way in</h1>
       <p class="lead">Tiny Fest sits off-grid — no mains power, no cell service, and the last stretch isn't paved. Here's the route: how to get there, where to park, and what check-in looks like.</p>
 
@@ -522,18 +526,18 @@
       <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
       <h1>Tiny Map</h1>
       <p class="lead">The lay of the land once you're in — camping, the amphitheater, Tiny Klerb, Tiny Village, Tiny Cafe, the help desk, restrooms, and water.</p>
-    </header>
 
-    <section class="map-section">
-      <h2>Bathrooms</h2>
-      <div class="body">
-        <p>There are <strong>4 brick-and-mortar vault toilets</strong> on site — the non-flushing kind you'll find at most state parks, not port-a-potties.</p>
-        <ul class="checklist">
-          <li>A <strong>hand-washing station</strong> will be set up outside.</li>
-          <li><strong>Hand sanitizer</strong> is stocked in each bathroom.</li>
-        </ul>
-      </div>
-    </section>
+      <section class="map-section">
+        <h2>Bathrooms</h2>
+        <div class="body">
+          <p>There are <strong>4 brick-and-mortar vault toilets</strong> on site — the non-flushing kind you'll find at most state parks, not port-a-potties.</p>
+          <ul class="checklist">
+            <li>A <strong>hand-washing station</strong> will be set up outside.</li>
+            <li><strong>Hand sanitizer</strong> is stocked in each bathroom.</li>
+          </ul>
+        </div>
+      </section>
+    </header>
 
     <figure class="photo map-photo">
       <img src="images/tiny-map.png" alt="Map of the Tiny Fest grounds. Two camping areas sit at the north and south ends of the meadow. Tiny Sanctuary is in the southwest, near the Tiny Amphitheater at the meadow's center-west. Tiny Klerb and Tiny Village sit in the northeast, near restrooms and a water tap. Tiny Cafe and the Help Desk are further east along the path toward parking, with a second water tap near the cafe. A compass rose in the upper right points north." loading="lazy">
@@ -543,7 +547,7 @@
 
 <div id="panel-schedule" role="tabpanel" aria-labelledby="tab-schedule" hidden>
   <div class="wrap">
-    <header class="hero">
+    <header class="hero hero--flush">
       <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
       <h1>Schedule</h1>
       <p class="lead">Set times for Saturday and Sunday — more added as they're locked in.</p>
@@ -586,7 +590,7 @@
       <div class="stage">
         <h3 class="stage-name">Tiny Sanctuary</h3>
         <ul class="set-list">
-          <li><span class="time">11:00 AM</span><span class="act">Sound Bath with Yael</span></li>
+          <li><span class="time">11 AM–Noon</span><span class="act">Sound Bath with Yael</span></li>
         </ul>
       </div>
     </section>
