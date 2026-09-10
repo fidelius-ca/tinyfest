@@ -88,7 +88,7 @@
   }
   .alert-inner{
     display:flex;
-    align-items:center;
+    align-items:flex-start;
     gap:12px;
     padding:13px 24px;
   }
@@ -96,11 +96,21 @@
     flex:none;
     width:20px;
     height:20px;
+    margin-top:2px;
+  }
+  .alert-inner .alert-lines{
+    display:grid;
+    gap:6px;
   }
   .alert-inner p{
     margin:0;
     font-size:.92rem;
     line-height:1.4;
+  }
+  .alert-inner a{
+    color:inherit;
+    text-decoration:underline;
+    font-weight:600;
   }
 
   .eyebrow{
@@ -449,7 +459,11 @@
       <path d="M19 20 V4" />
       <path d="M3 3 L21 21" />
     </svg>
-    <p><strong>There's no cell reception on site.</strong> Save or screenshot this page before you leave signal behind — don't count on loading it once you're there. <strong>Carpooling highly recommended.</strong></p>
+    <div class="alert-lines">
+      <p><strong>There's no cell reception on site.</strong> Save or screenshot this page before you leave signal behind — don't count on loading it once you're there.</p>
+      <p><strong>Carpooling highly recommended.</strong></p>
+      <p><strong>Make sure you've signed the <a href="https://waiver.tinyfest.xyz" target="_blank" rel="noopener">waiver</a> before entering Tiny Fest.</strong></p>
+    </div>
   </div>
 </div>
 
