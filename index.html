@@ -153,7 +153,7 @@
   }
   header.hero.hero--flush{
     border-bottom:none;
-    padding-bottom:32px;
+    padding-bottom:8px;
   }
   .hero h1{
     font-size:clamp(2.4rem, 5.6vw, 3.6rem);
@@ -331,7 +331,8 @@
 
   .map-photo{ margin-top:8px; }
 
-  .map-section{ padding-top:28px; }
+  .map-section{ padding-top:4px; }
+  .lead + .map-section{ margin-top:-20px; }
   .map-section h2{ font-size:1.5rem; margin-bottom:10px; }
   .map-section .body{ color:var(--ink-soft); max-width:62ch; }
   .map-section .body p{ margin:0 0 12px; }
@@ -343,9 +344,10 @@
   .day-heading{
     font-size:1.3rem;
     padding-bottom:14px;
-    margin-bottom:32px;
+    margin-bottom:28px;
     border-bottom:1px solid var(--line);
   }
+  .day-heading + .plaque{ margin-bottom:36px; }
   .stage{ margin-bottom:40px; }
   .stage:last-child{ margin-bottom:0; }
   .stage-name{
@@ -522,7 +524,7 @@
 
 <div id="panel-map" role="tabpanel" aria-labelledby="tab-map" hidden>
   <div class="wrap">
-    <header class="hero">
+    <header class="hero hero--flush">
       <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
       <h1>Tiny Map</h1>
       <p class="lead">The lay of the land once you're in — camping, the amphitheater, Tiny Klerb, Tiny Village, Tiny Cafe, the help desk, restrooms, and water.</p>
@@ -533,7 +535,7 @@
           <p>There are <strong>4 brick-and-mortar vault toilets</strong> on site — the non-flushing kind you'll find at most state parks, not port-a-potties.</p>
           <ul class="checklist">
             <li>A <strong>hand-washing station</strong> will be set up outside.</li>
-            <li><strong>Hand sanitizer</strong> is stocked in each bathroom.</li>
+            <li><strong>Hand sanitizer</strong> will be stocked in each bathroom.</li>
           </ul>
         </div>
       </section>
@@ -550,7 +552,10 @@
     <header class="hero hero--flush">
       <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
       <h1>Schedule</h1>
-      <p class="lead">Set times for Saturday and Sunday — more added as they're locked in.</p>
+    </header>
+
+    <section class="schedule-day">
+      <h2 class="day-heading">Sat, Sept 12</h2>
 
       <div class="plaque">
         <div class="stat">
@@ -558,10 +563,6 @@
           <span class="v">3:00 PM</span>
         </div>
       </div>
-    </header>
-
-    <section class="schedule-day">
-      <h2 class="day-heading">Sat, Sept 12</h2>
 
       <div class="stage">
         <h3 class="stage-name">Tiny Amphitheater</h3>
