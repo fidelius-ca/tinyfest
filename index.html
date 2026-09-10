@@ -335,6 +335,13 @@
   .agreements-section .body p{ margin:20px 0 0; }
   .agreements-section .body strong{ color:var(--ink); font-weight:600; }
 
+  .welcome-section{ padding-top:44px; }
+  .welcome-section h2{ font-size:1.5rem; margin-bottom:14px; }
+  .welcome-section .body{ color:var(--ink-soft); max-width:68ch; }
+  .welcome-section .body p{ margin:0; }
+  .welcome-section .body strong{ color:var(--ink); font-weight:600; }
+  .welcome-section .addr-row{ margin-top:0; margin-bottom:14px; }
+
   .map-section{ padding-top:4px; }
   .lead + .map-section{ margin-top:-20px; }
   .map-section h2{ font-size:1.5rem; margin-bottom:10px; }
@@ -443,14 +450,69 @@
 
 <div class="wrap tabs-wrap">
   <div class="tabs" role="tablist" aria-label="Tiny Fest sections">
-    <button type="button" role="tab" id="tab-directions" aria-controls="panel-directions" aria-selected="true" class="tab-btn is-active" data-slug="directions">Directions</button>
+    <button type="button" role="tab" id="tab-welcome" aria-controls="panel-welcome" aria-selected="true" class="tab-btn is-active" data-slug="welcome">Welcome</button>
+    <button type="button" role="tab" id="tab-directions" aria-controls="panel-directions" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="directions">Directions</button>
     <button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="map">Tiny Map</button>
     <button type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="schedule">Schedule</button>
     <button type="button" role="tab" id="tab-agreements" aria-controls="panel-agreements" aria-selected="false" tabindex="-1" class="tab-btn" data-slug="agreements">Community Agreements</button>
   </div>
 </div>
 
-<div id="panel-directions" role="tabpanel" aria-labelledby="tab-directions">
+<div id="panel-welcome" role="tabpanel" aria-labelledby="tab-welcome">
+  <div class="wrap">
+    <header class="hero">
+      <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
+      <h1>Hey Tiny Guests</h1>
+      <p class="lead">We're excited to frolic with you at Tiny Fest! Please read this carefully — it'll help you have the best possible time at our renegade forest party.</p>
+    </header>
+
+    <section class="welcome-section">
+      <h2>What to know</h2>
+      <div class="body">
+        <ul class="checklist">
+          <li>While it's only 25 minutes from downtown Oakland, there is no cell reception at the site. We will have limited wifi in case of emergencies. Be prepared to unplug. :)</li>
+          <li>There is water on site. We will also have non-alc beverages and pizza for sale. You are welcome to bring whatever makes you happy beyond these essentials.</li>
+          <li>There are <a href="#map">bathrooms</a> on site.</li>
+          <li>There is parking on site. Please park in the designated area to avoid ticketing and park close so we can fit as many cars as possible. We recommend carpooling. See <a href="#directions">directions</a> for the full route in.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="welcome-section">
+      <h2>What to bring</h2>
+      <div class="body">
+        <ul class="checklist">
+          <li>Water bottle</li>
+          <li>Cash for food and tiny merch</li>
+          <li>Snacks and food to share</li>
+          <li>Flashlight or headlamp</li>
+          <li>Layers</li>
+          <li>Camping gear if you're spending the night</li>
+          <li>Anything else to feel comfortable (picnic blanket, folding chair, yoga mat for <a href="#schedule">Sunday sound bath</a>, etc.)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="welcome-section">
+      <h2>Before you go</h2>
+      <div class="body">
+        <p>Please review our <a href="#agreements">community agreements</a> and sign <a href="https://waiver.tinyfest.xyz" target="_blank" rel="noopener">this waiver</a> prior to coming to the festival so your entry is fast and smooth.</p>
+      </div>
+    </section>
+
+    <section class="welcome-section">
+      <h2>Getting to Tiny Fest</h2>
+      <div class="body">
+        <div class="addr-row">
+          <span class="addr">Bort Meadow Staging Area, Redwood Rd, Oakland, CA 94619</span>
+        </div>
+        <p>Check out the full <a href="#directions">directions</a> before arriving.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="panel-directions" role="tabpanel" aria-labelledby="tab-directions" hidden>
   <div class="wrap">
     <header class="hero">
       <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
