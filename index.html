@@ -122,21 +122,22 @@
   }
   .tabs{
     display:flex;
-    gap:28px;
+    gap:32px;
     border-bottom:1px solid var(--line);
     overflow-x:auto;
   }
   .tab-btn{
     font-family:'JetBrains Mono', ui-monospace, monospace;
-    font-size:.78rem;
-    letter-spacing:.08em;
+    font-size:1.05rem;
+    font-weight:600;
+    letter-spacing:.03em;
     text-transform:uppercase;
     white-space:nowrap;
     background:transparent;
     border:none;
-    border-bottom:2px solid transparent;
+    border-bottom:3px solid transparent;
     color:var(--ink-soft);
-    padding:12px 2px;
+    padding:14px 2px;
     cursor:pointer;
   }
   .tab-btn:hover{ color:var(--ink); }
@@ -333,6 +334,71 @@
   .map-section .body p:last-child{ margin-bottom:0; }
   .map-section .body strong{ color:var(--ink); font-weight:600; }
 
+  /* ---------- schedule ---------- */
+  .schedule-day{ padding-top:48px; }
+  .day-heading{
+    font-size:1.3rem;
+    padding-bottom:14px;
+    margin-bottom:32px;
+    border-bottom:1px solid var(--line);
+  }
+  .stage{ margin-bottom:40px; }
+  .stage:last-child{ margin-bottom:0; }
+  .stage-name{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent2-text);
+    margin-bottom:14px;
+  }
+  .set-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .set-list li{
+    display:flex;
+    align-items:baseline;
+    gap:20px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .set-list li:last-child{ border-bottom:none; }
+  .set-list .time{
+    font-family:'JetBrains Mono', ui-monospace, monospace;
+    font-size:.85rem;
+    color:var(--ink-soft);
+    flex:none;
+    width:104px;
+    font-variant-numeric:tabular-nums;
+  }
+  .set-list .act{
+    font-family:'Fraunces', ui-serif, Georgia, serif;
+    font-weight:500;
+    font-size:1.05rem;
+    color:var(--ink);
+  }
+  .set-list .tag{
+    display:block;
+    font-family:'Work Sans', ui-sans-serif, system-ui, sans-serif;
+    font-weight:400;
+    font-size:.82rem;
+    color:var(--ink-soft);
+    margin-top:3px;
+  }
+
+  @media (max-width:640px){
+    .set-list li{ flex-wrap:wrap; gap:2px 20px; }
+    .set-list .time{ width:auto; order:2; }
+    .set-list .act{ order:1; flex:1 0 100%; }
+  }
+
+  @media (max-width:480px){
+    .tabs{ gap:16px; }
+    .tab-btn{ font-size:.92rem; }
+  }
+
   @media (max-width:640px){
     header.hero{ padding:32px 0 40px; }
     .plaque{ flex-direction:column; width:100%; }
@@ -368,6 +434,7 @@
   <div class="tabs" role="tablist" aria-label="Tiny Fest sections">
     <button type="button" role="tab" id="tab-directions" aria-controls="panel-directions" aria-selected="true" class="tab-btn is-active">Directions</button>
     <button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="false" tabindex="-1" class="tab-btn">Tiny Map</button>
+    <button type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1" class="tab-btn">Schedule</button>
   </div>
 </div>
 
@@ -457,10 +524,6 @@
       <p class="lead">The lay of the land once you're in — camping, the amphitheater, Tiny Klerb, Tiny Village, Tiny Cafe, the help desk, restrooms, and water.</p>
     </header>
 
-    <figure class="photo map-photo">
-      <img src="images/tiny-map.png" alt="Map of the Tiny Fest grounds. Two camping areas sit at the north and south ends of the meadow. Tiny Sanctuary is in the southwest, near the Tiny Amphitheater at the meadow's center-west. Tiny Klerb and Tiny Village sit in the northeast, near restrooms and a water tap. Tiny Cafe and the Help Desk are further east along the path toward parking, with a second water tap near the cafe. A compass rose in the upper right points north." loading="lazy">
-    </figure>
-
     <section class="map-section">
       <h2>Bathrooms</h2>
       <div class="body">
@@ -468,6 +531,49 @@
         <ul class="checklist">
           <li>A <strong>hand-washing station</strong> will be set up outside.</li>
           <li><strong>Hand sanitizer</strong> is stocked in each bathroom.</li>
+        </ul>
+      </div>
+    </section>
+
+    <figure class="photo map-photo">
+      <img src="images/tiny-map.png" alt="Map of the Tiny Fest grounds. Two camping areas sit at the north and south ends of the meadow. Tiny Sanctuary is in the southwest, near the Tiny Amphitheater at the meadow's center-west. Tiny Klerb and Tiny Village sit in the northeast, near restrooms and a water tap. Tiny Cafe and the Help Desk are further east along the path toward parking, with a second water tap near the cafe. A compass rose in the upper right points north." loading="lazy">
+    </figure>
+  </div>
+</div>
+
+<div id="panel-schedule" role="tabpanel" aria-labelledby="tab-schedule" hidden>
+  <div class="wrap">
+    <header class="hero">
+      <span class="eyebrow">Tiny Fest · Sept 12–13, 2026</span>
+      <h1>Schedule</h1>
+      <p class="lead">Set times for Saturday — more added as they're locked in.</p>
+
+      <div class="plaque">
+        <div class="stat">
+          <span class="k">Doors open</span>
+          <span class="v">3:00 PM</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="schedule-day">
+      <h2 class="day-heading">Sat, Sept 12</h2>
+
+      <div class="stage">
+        <h3 class="stage-name">Tiny Amphitheater</h3>
+        <ul class="set-list">
+          <li><span class="time">6:00 PM</span><span class="act">Fidelius &amp; Vanya</span></li>
+          <li><span class="time">6:45 PM</span><span class="act">Xuun</span></li>
+          <li><span class="time">7:45 PM</span><span class="act">Tiny Quest Opening Performance</span></li>
+          <li><span class="time">8:00–9:00 PM</span><span class="act">The Unstandards</span></li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <h3 class="stage-name">Tiny Klerb</h3>
+        <ul class="set-list">
+          <li><span class="time">9:00 PM</span><span class="act">Bloom b2b Karlita b2b Saint Ignasty</span></li>
+          <li><span class="time">10:15 PM</span><span class="act">The Other Andrew<span class="tag">DnB/Jungle, live guitar</span></span></li>
         </ul>
       </div>
     </section>
